@@ -34,8 +34,6 @@ pipeline {
                 echo "TEST STAGE"
                 test -f build/index.html
                 npm test
-
-
                 '''
             }
         }
