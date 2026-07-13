@@ -32,6 +32,7 @@ pipeline {
             steps {
                 sh '''
                 echo "TEST STAGE"
+                ls -la |grep index.html
 
 
                 '''
