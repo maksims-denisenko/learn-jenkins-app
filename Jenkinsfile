@@ -48,7 +48,7 @@ pipeline {
                 sh '''
                 echo "E2E TEST STAGE"
                 npm install -g serve
-                serve -s build -l 3000
+                node_modules/.bin/serve -s build
                 npx playwright test
                 '''
             }
