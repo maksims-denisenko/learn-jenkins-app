@@ -22,7 +22,10 @@ pipeline {
 
             }
         }
-        stage('TEST') {
+
+        stage('Run Tests'){
+            parallel {
+                        stage('TEST') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -61,4 +64,8 @@ pipeline {
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwrigth HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
+            }
+        }
+
+
 }
