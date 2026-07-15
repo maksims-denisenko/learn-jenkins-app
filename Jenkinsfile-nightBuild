@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build Playwright Image once a day') {
+            steps {
+                 sh '''
+                docker build -t my-playwright .
+                '''
+            }
+        }
+    }
+}
